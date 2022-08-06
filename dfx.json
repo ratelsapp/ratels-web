@@ -1,0 +1,28 @@
+{
+  "canisters": {
+    "interface": {
+      "frontend": {
+        "entrypoint": "./public/index.html"
+      },
+      "source": ["./build"],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "vessel sources"
+    }
+  },
+  "dfx": "0.9.3",
+  "networks": {
+    "test": {
+        "bind": "dtest.app",
+        "type": "ephemeral"
+    },
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

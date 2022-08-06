@@ -1,0 +1,27 @@
+@import "../../styles/mixin";
+
+header {
+  padding: 24px;
+  display: flex;
+  justify-content: flex-end;
+  .walletWrap {
+    min-width: 130px;
+    height: 40px;
+    display: flex;
+    background: #232625;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 10px;
+
+    > svg {
+      margin-right: 9px;
+      flex-shrink: 0;
+    }
+  }
+  @include mobile {
+    padding: 15px 10px;
+  }
+}
+

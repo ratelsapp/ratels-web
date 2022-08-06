@@ -1,0 +1,93 @@
+@import "../../styles/mixin";
+
+.resultDetail {
+  background: #242927;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+
+  .toptips {
+    font-size: 14px;
+    color: #9B9B9B;
+  }
+
+  @include mobile {
+    padding: 30px 15px 15px;
+  }
+}
+
+.table {
+  border: 1px solid #343836;
+  border-radius: 10px;
+  padding: 0 20px;
+
+  &_head {
+    display: flex;
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    &--item {
+      flex: 1;
+      font-size: 14px;
+      color: #9B9B9B;
+    }
+  }
+
+  &_row {
+    display: flex;
+    border-top: 1px solid #333333;
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    &--item {
+      flex: 1;
+
+      &:nth-child(1) {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: #C9C9C9;
+
+        > svg {
+          fill: #C9C9C9;
+          margin-right: 12px;
+        }
+      }
+
+      &:nth-child(2) {
+        font-size: 14px;
+        color: #1BB16A;
+      }
+
+      &:nth-child(3) {
+        font-size: 14px;
+        color: #C9C9C9;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 0 15px;
+    &_row {
+      &--item {
+        &:nth-child(1) {
+          font-size: 14px;
+
+          > svg {
+            margin-right: 8px;
+          }
+        }
+
+        &:nth-child(2) {
+          font-size: 12px;
+        }
+
+        &:nth-child(3) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

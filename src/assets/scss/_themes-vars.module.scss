@@ -1,0 +1,207 @@
+// paper & background
+$paper: #ffffff;
+
+// primary
+$primaryLight: #e3f2fd;
+$primaryMain: #E5BF5D;
+$primaryDark: #E5BF5D;
+$primary200: #ffffff;
+$primary800: #1565c0;
+
+// secondary
+$secondaryLight: #ffffff;
+$secondaryMain: #5669dc;
+$secondaryDark: #5669dc;
+$secondary200: #b39ddb;
+$secondary800: #4527a0;
+
+// success Colors
+$successLight: #b9f6ca;
+$success200: #69f0ae;
+$successMain: #00e676;
+$successDark: #54c081;
+
+// error
+$errorLight: #ef9a9a;
+$errorMain: #f44336;
+$errorDark: #c62828;
+
+// orange
+$orangeLight: #fbe9e7;
+$orangeMain: #ffab91;
+$orangeDark: #d84315;
+
+// warning
+$warningLight: #F2994A;
+$warningMain: #ffe57f;
+$warningDark: #ffc107;
+
+// grey
+$grey50: #fafafa;
+$grey100: #f5f5f5;
+$grey200: #eeeeee;
+$grey300: #e0e0e0;
+$grey500: #9e9e9e;
+$grey600: #757575;
+$grey700: #616161;
+$grey900: #212121;
+
+//-----------------------|| DARK THEME VARIANTS ||-----------------------//
+
+// paper & background
+$darkBackground: #1a223f; // level 3
+$darkPaper: #000000; // level 1
+
+// dark 800 & 900
+$darkLevel1: #000000; // level 1
+$darkLevel2: #1a223f; // level 2
+$darkLevel3: #212946; // level 3
+$darkLevel4: #29314f; // level 4
+
+// primary dark
+$accountCardBgDarkPrimaryLight: #ffffff;
+$darkPrimaryLight: #e3f2fd;
+$darkPrimaryMain: #E5BF5D;
+$darkPrimaryDark: #5669dc;
+$darkPrimary200: #90caf9;
+$darkPrimary800: #1565c0;
+$darkPrimary400: #4F5A84;
+
+$lightPrimaryMain: #E5BF5D;
+
+$lightLevel2: #EFEFFF;
+$lightLevel4: #FAFAFA;
+
+$lightGray200: #f5f5f5;
+$lightGray50: #fafafa;
+
+// secondary dark
+$darkSecondaryLight: #212946;
+$darkSecondaryMain: #5669dc;
+$darkSecondaryDark: #5669dc;
+$darkSecondary200: #b39ddb;
+$darkSecondary800: #6200ea;
+
+// text variants
+// $darkTextPrimary: #bdc8f0;
+$darkTextPrimary: #ffffff;
+$darkTextSecondary: #ffffff;
+$darkTextTertiary: #4F5A84;
+$darkTextFourth: #29314F;
+$darkTextFifth: #212946;
+
+$lightTextTitle: #212121;
+$lightTextPrimary: #212121;
+$lightTextSecondary: #757575;
+$lightTextTertiary: #9E9E9E;
+$lightTextFourth: #F5F5F5;
+$lightTextFifth: #FAFAFA;
+
+$lightGray200BorderColor: #EFEFFF;
+
+$buttonGradientStart: #5569db;
+$buttonGradientEnd: #8572ff;
+
+:export {
+  // paper & background
+  paper: $paper;
+
+  // primary
+  primaryLight: $primaryLight;
+  primary200: $primary200;
+  primaryMain: $primaryMain;
+  primaryDark: $primaryDark;
+  primary800: $primary800;
+
+  // secondary
+  secondaryLight: $secondaryLight;
+  secondary200: $secondary200;
+  secondaryMain: $secondaryMain;
+  secondaryDark: $secondaryDark;
+  secondary800: $secondary800;
+
+  // success
+  successLight: $successLight;
+  success200: $success200;
+  successMain: $successMain;
+  successDark: $successDark;
+
+  // error
+  errorLight: $errorLight;
+  errorMain: $errorMain;
+  errorDark: $errorDark;
+
+  // orange
+  orangeLight: $orangeLight;
+  orangeMain: $orangeMain;
+  orangeDark: $orangeDark;
+
+  // warning
+  warningLight: $warningLight;
+  warningMain: $warningMain;
+  warningDark: $warningDark;
+
+  // grey
+  grey50: $grey50;
+  grey100: $grey100;
+  grey200: $grey200;
+  grey300: $grey300;
+  grey500: $grey500;
+  grey600: $grey600;
+  grey700: $grey700;
+  grey900: $grey900;
+
+  //-----------------------|| DARK THEME VARIANTS ||-----------------------//
+
+  // paper & background
+  darkPaper: $darkPaper;
+  darkBackground: $darkBackground;
+
+  // dark 800 & 900
+  darkLevel1: $darkLevel1;
+  darkLevel2: $darkLevel2;
+  darkLevel3: $darkLevel3;
+  darkLevel4: $darkLevel4;
+
+  // text variants
+  darkTextPrimary: $darkTextPrimary;
+  darkTextSecondary: $darkTextSecondary;
+  darkTextTertiary: $darkTextTertiary;
+  darkTextFourth: $darkTextFourth;
+  darkTextFifth: $darkTextFifth;
+
+  lightPrimaryMain: $lightPrimaryMain;
+
+  lightTextPrimary: $lightTextPrimary;
+  lightTextSecondary: $lightTextSecondary;
+  lightTextTertiary: $lightTextTertiary;
+  lightTextFourth: $lightTextFourth;
+  lightTextFifth: $lightTextFifth;
+
+  lightLevel2: $lightLevel2;
+  lightLevel4: $lightLevel4;
+
+  lightGray200: $lightGray200;
+  lightGray50: $lightGray50;
+
+  lightGray200BorderColor: $lightGray200BorderColor;
+
+  // primary dark
+  accountCardBgDarkPrimaryLight: $accountCardBgDarkPrimaryLight;
+  darkPrimaryLight: $darkPrimaryLight;
+  darkPrimaryMain: $darkPrimaryMain;
+  darkPrimaryDark: $darkPrimaryDark;
+  darkPrimary200: $darkPrimary200;
+  darkPrimary800: $darkPrimary800;
+  darkPrimary400: $darkPrimary400;
+
+  // secondary dark
+  darkSecondaryLight: $darkSecondaryLight;
+  darkSecondaryMain: $darkSecondaryMain;
+  darkSecondaryDark: $darkSecondaryDark;
+  darkSecondary200: $darkSecondary200;
+  darkSecondary800: $darkSecondary800;
+
+  defaultGradientStart: $buttonGradientStart;
+  defaultGradientEnd: $buttonGradientEnd;
+}

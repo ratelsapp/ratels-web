@@ -1,0 +1,46 @@
+@import "../../styles/mixin";
+
+.progress {
+  margin-top: 48px;
+  margin-bottom: -24px;
+
+  &_title {
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFFFFF;
+  }
+
+  &_rate {
+    background: #242927;
+    border-radius: 30px;
+    height: 16px;
+    padding: 4px;
+    margin: 12px 0;
+
+    &--line {
+      background: #1BB16A;
+      border-radius: 30px;
+      height: 8px;
+      width: 0%;
+      transition: all 2s ease-in;
+    }
+  }
+
+  &_tips {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #9B9B9B;
+  }
+
+
+  @include mobile {
+    &_rate {
+      height: 12px;
+      padding: 2px;
+      &--line {
+        height: 8px;
+      }
+    }
+  }
+}

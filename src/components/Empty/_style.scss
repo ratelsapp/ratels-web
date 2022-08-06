@@ -1,0 +1,15 @@
+.empty {
+  width: 100%;
+  padding: 100px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &_text {
+    font-size: 20px;
+    color: #888A8A;
+  }
+  &_img {
+    width: 180px;
+  }
+}

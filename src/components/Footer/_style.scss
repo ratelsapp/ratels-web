@@ -1,0 +1,53 @@
+@import "../../styles/mixin";
+
+.footer {
+  border-top: 1px solid #333333;
+  height: 100px;
+  padding: 0 228px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  > .iconWrap {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1C2521;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    > svg {
+      fill: #DDDDDD;
+      transition: all 0.25s ease-in-out;
+    }
+
+    &:hover {
+      background: #FFF;
+
+      svg {
+        fill: #000;
+      }
+    }
+  }
+
+  @include mobile {
+    height: 80px;
+    justify-content: center;
+    padding: 0 10px;
+    margin-top: 30px;
+    > .iconWrap {
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+  }
+}
+

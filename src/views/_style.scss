@@ -1,0 +1,112 @@
+@import "../styles/mixin";
+
+.index {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 13vh 15px 0;
+
+  .help_btn {
+    background: #131B16;
+    border-radius: 10px;
+    color: #1BB16A;
+    text-transform: initial;
+  }
+
+  @include mobile {
+    padding: 80px 10px 0;
+  }
+}
+
+.content {
+  width: 100%;
+  background: #242927;
+  margin-top: 40px;
+  background: #0F1814;
+  border-radius: 16px;
+  overflow: hidden;
+
+  .tab {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 24px;
+    height: 80px;
+    align-items: center;
+
+    &-item {
+      color: #9B9B9B;
+      font-size: 20px;
+      cursor: pointer;
+      position: relative;
+
+      &.active {
+        color: #fff;
+
+        &:after {
+          position: absolute;
+          left: 50%;
+          bottom: 50%;
+          transform: translate(-50%, 25px);
+          content: " ";
+          background: #1BB16A;
+          border-radius: 8px;
+          width: 30px;
+          height: 4px;
+        }
+      }
+
+      &:first-child {
+        margin-right: 40px;
+      }
+    }
+
+    .canister {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      font-size: 16px;
+      color: #1BB16A;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+      user-select: none;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      > svg {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .bottom {
+    background-color: #242927;
+    padding: 24px;
+  }
+  @include mobile {
+    margin-top: 25px;
+    .tab {
+      padding: 0 20px;
+      &-item {
+        font-size: 16px;
+      }
+      .canister {
+        font-size: 14px;
+      }
+    }
+    .bottom {
+      padding: 20px;
+    }
+  }
+}

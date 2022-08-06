@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "ui-component": [
+        "ui-component"
+      ],
+      "hooks": [
+        "hooks"
+      ],
+      "constants": [
+        "constants"
+      ],
+      "store": [
+        "store"
+      ],
+      "utils": [
+        "utils"
+      ],
+      "assets": [
+        "assets"
+      ],
+      "sdk": [
+        "sdk"
+      ],
+      "sdk-core": [
+        "sdk-core"
+      ]
+    }
+  }
+}
