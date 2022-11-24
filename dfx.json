@@ -1,0 +1,28 @@
+{
+  "canisters": {
+    "ratel_new_backend": {
+      "main": "src/ratel_new_backend/main.mo",
+      "type": "motoko"
+    },
+    "ratel_new_frontend": {
+      "dependencies": [
+        "ratel_new_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/ratel_new_frontend/src/index.html"
+      },
+      "source": [
+        "src/ratel_new_frontend/assets",
+        "dist/ratel_new_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "version": 1
+}
