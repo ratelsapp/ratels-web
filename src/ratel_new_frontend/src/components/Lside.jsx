@@ -27,7 +27,7 @@ export default function Lside()
         <>
             <CustomCard item = {<TopSection />} />{/* ratail  */} 
             
-            <CustomCard title="Ratail" item = { <GroupImg title = "Entrepot" /> } /> {/* ratail  */}            
+            <CustomCard title="Ratels" item = { <GroupImg title = "Entrepot" /> } /> {/* ratail  */}            
             
             <CustomCard title = "NFT" item = {
                 

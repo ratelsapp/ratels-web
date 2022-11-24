@@ -10,14 +10,14 @@ function App() {
     <>
     <Container className="">
         <Row className="my-3">
-          <Col className="col-md-3">
+          <Col xs={12} md={4}>
             <Img src="https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149611030.jpg?w=2000" className="img-fluid" />
             <div>
               <GroupImg />
             </div>
           </Col>
 
-          <Col className="col-md-9">
+          <Col xs={12} md={8}>
             <Lside />
           </Col>
         </Row>
