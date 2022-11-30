@@ -5,14 +5,17 @@ export default function Did(){
 
     const content = [
         {
+            "key": 1,
             "title" : "ICNS",
             "text": "tomada.icp"
         },
         {
+            "key": 2,
             "title": "ICNAMING",
             "text" : "tomada.icp"
         },
         {
+            "key": 3,
             "title" : "Dmail",
             "text" : "topme111@dmail.icp | tomada.icp "
         }
@@ -23,7 +26,7 @@ export default function Did(){
 
         {
             content.map(item=>{
-                return <div className="bg-light p-3 my-4 rounded ">
+                return <div className="bg-light p-3 my-4 rounded text-center text-md-start" key={item.key}>
                     <h3>{item.title}</h3>
                     <p>{item.text}</p>
                 </div>

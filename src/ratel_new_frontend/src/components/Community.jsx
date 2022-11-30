@@ -5,6 +5,7 @@ export default function Commnuity() {
 
     const content = [
         {
+            "key":1,
             "title": "FDAO",
             "p": [
                 {
@@ -27,12 +28,12 @@ export default function Commnuity() {
             <h4 className="text-center text-md-start">Community Voting</h4>
 
             {content.map(item => {
-                return <div className="p-3 bg-light">
+                return <div className="p-4 text-center text-md-start bg-light" key={item.key}>
                     <h3>{item.title}</h3>
 
                     {
-                        item.p.map(row => {
-                            return <Row>
+                        item.p.map((row, key) => {
+                            return <Row className="mb-4" key = {key}>
                                     <div className="col-sm-6">
                                         <p className="">{row.text}</p>
                                         <a href="/" className="">{row.vote}</a>

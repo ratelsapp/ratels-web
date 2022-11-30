@@ -20,15 +20,7 @@ export default function Ratel() {
             "src": "https://cdn.dribbble.com/users/383277/screenshots/18055765/media/e5fc935b60035305099554810357012a.png?compress=1&resize=400x300"
         },
         {
-            "key": 3,
-            "src": "https://cdn.dribbble.com/users/383277/screenshots/18055765/media/e5fc935b60035305099554810357012a.png?compress=1&resize=400x300"
-        },
-        {
             "key": 4,
-            "src": "https://cdn.dribbble.com/users/383277/screenshots/18055765/media/e5fc935b60035305099554810357012a.png?compress=1&resize=400x300"
-        },
-        {
-            "key": 5,
             "src": "https://cdn.dribbble.com/users/383277/screenshots/18055765/media/e5fc935b60035305099554810357012a.png?compress=1&resize=400x300"
         }
     ]
@@ -36,9 +28,9 @@ export default function Ratel() {
     return (
         <section className="my-5 text-center text-md-start">
             <h2 className="">Ratels</h2>
-            <div className=" d-flex justify-content-around mt-5 p-4 bg-light rounded container text-center text-md-start">
-                {images.map((data) => {return <div className="d-flex ">
-                    <Image key = {data.key} src = {data.src} className=" me-2 img-fluid rounded" width={60} height={80} />
+            <div className=" d-flex justify-content-around mt-5 p-4 bg-light rounded text-center text-md-start">
+                {images.map((data) => {return <div className="d-flex " key = {data.key} >
+                    <Image src = {data.src} className=" me-2 img-fluid rounded" width={50} height={50} />
                 </div>  })}
             </div>
         </section>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Main from './components/main';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Banner from "./components/Banner";
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Navbar />
+        {/* <Navbar /> */}
         <Banner />
         <Main />
 

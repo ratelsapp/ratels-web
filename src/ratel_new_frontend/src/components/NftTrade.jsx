@@ -63,15 +63,15 @@ export default function Nfttrade() {
             <h2 className="my-3 text-center text-md-start"> Nft Trade  </h2>
             {
                 content.map(item => {
-                    return <div className="bg-light rounded p-3 my-3" key={item.key}>
-                        <h3>{item.title}</h3>
+                    return <div className="bg-light rounded p-4 my-3" key={item.key}>
+                        <h3 className="text-center text-md-start mb-4">{item.title}</h3>
 
-                        <Row className="align-item-center align-middle">
-                            <Col>
-                                <Image src={item.p[0].src} className="rounded d-inline" width={80} height={80} />
-                                <p className="d-inline-block ms-3 me-auto ">{item.p[0].text1}</p>
+                        <Row className="align-middle">
+                            <Col xs={12} md={6} className="text-center">
+                                <Image src={item.p[0].src} className="rounded d-block d-md-inline text-center mx-auto mb-2" width={80} height={80} />
+                                <p className="d-inline-block ms-3 me-auto text-center text-md-start">{item.p[0].text1}</p>
                             </Col>
-                            <Col><p className="align-middle text-end p-3">{item.p[0].text2}</p></Col>
+                            <Col xs={12} md={6}><p className="align-middle text-center text-md-end p-3">{item.p[0].text2}</p></Col>
                         </Row>
                     </div>
                 })

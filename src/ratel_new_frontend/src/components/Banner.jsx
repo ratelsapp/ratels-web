@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { FaPenSquare, FaCopy, FaFacebook, FaDiscord, FaGithub } from "react-icons/fa";
 
@@ -18,16 +18,25 @@ export default function Banner() {
             "src": "https://cdn.dribbble.com/users/383277/screenshots/18055765/media/e5fc935b60035305099554810357012a.png?compress=1&resize=400x300"
         },
         {
-            "key": 3,
-            "src": "https://cdn.dribbble.com/users/383277/screenshots/18055765/media/e5fc935b60035305099554810357012a.png?compress=1&resize=400x300"
-        },
-        {
             "key": 4,
             "src": "https://media.istockphoto.com/id/1396048367/vector/triple-dots-icon-vector-three-dots-as-a-symbol-of-menu-interface-or-more-options-3-ellipses.jpg?s=612x612&w=0&k=20&c=wCh-lsZlTRtE_AgnmqSmYRARZKfawhtObulGRV_FRd0="
         }
         
     ]
 
+    const handleEdit = () =>{
+        setName("Hello world");
+    }
+
+    const [followers, SetFollowers] = useState(0);
+    const [following, SetFollowing] = useState(0);
+    const [name, setName] = useState("NickName");
+    
+
+    // set Followers method is called when user follows another user on the site
+    // SetFollowers(followers++);
+    // SetFollowing(following++);
+    
     return (
         <section className="">
             <Container>
@@ -40,17 +49,17 @@ export default function Banner() {
 
                         <div className=" d-flex justify-content-around mt-2 rounded container text-center text-md-start">
                             {images.map((data) => {
-                                return <div className="d-flex ">
-                                    <Image key={data.key} src={data.src} className=" me-2 img-fluid rounded" width={80} height={80} />
+                                return <div className="d-flex" key={data.key} >
+                                    <Image src={data.src} className=" me-2 img-fluid rounded" width={80} height={80} />
                                 </div>
                             })}
                         </div>
                     </Col>
                     <Col sm={12} md={7} className="align-middle text-center text-md-start">
                         <div className="align-middle my-3">
-                            <h1 className="fs-1 d-inline align-middle">Nickname</h1>
-                            <Button className="bg-dark   text-white align-middle text-dark px-4 py-0 mx-1">edit</Button>
-                            <span class="align-middle ms-2">#123123</span>
+                            <h1 className="fs-1 d-inline align-middle">{name}</h1>
+                            <Button className="bg-light text-gray align-middle text-dark px-4 py-0 mx-1" onClick={handleEdit}>edit</Button>
+                            <span className = "align-middle ms-2 fs-bold">#123123</span>
                         </div>
 
                         <div className="my-3">
@@ -65,18 +74,18 @@ export default function Banner() {
                         </div>
 
                         <div className="icons my-4">
-                            <FaFacebook className="me-2" style={{ "width": "50", "height": "50" }} />
-                            <FaDiscord className="me-2" style={{ "width": "50", "height": "50" }} />
-                            <FaGithub className="me-2" style={{ "width": "50", "height": "50" }} />
+                            <FaFacebook className="me-2" style={{ "width": "40", "height": "40", "color":"#4CA0EB" }} />
+                            <FaDiscord className="me-2" style={{ "width": "40", "height": "40", "color":"#5A65EA" }} />
+                            <FaGithub className="me-2" style={{ "width": "40", "height": "40", "color" : "#537DAA" }} />
                         </div>
 
-                        <Row className="social-stat justify-content-center justify-content-md-start align-items-center">
-                            <Col className=" text-center text-md-start" xs={2} md={2}>
-                                <h3>312</h3>
+                        <Row className="social-stat justify-content-center justify-content-md-start align-items-center text-center text-md-start">
+                            <Col className="" xs={3} md={3}>
+                                <h3>{following}</h3>
                                 <p>Followings</p>
                             </Col>
-                            <Col className="text-start text-md-start" xs={2} md={2}>
-                                <h3>121231</h3>
+                            <Col className="" xs={3} md={2}>
+                                <h3>{followers}</h3>
                                 <p>Followers</p>
                             </Col>
                         </Row>
