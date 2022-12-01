@@ -12,7 +12,6 @@
         "entrypoint": "src/ratel_new_frontend/src/index.html"
       },
       "source": [
-        "src/ratel_new_frontend/assets",
         "dist/ratel_new_frontend/"
       ],
       "type": "assets"
@@ -30,8 +29,8 @@
       "type": "ephemeral"
     },
     "test": {
-      "providers": ["https://dtest.app"],
-      "type": "ephemeral"
+      "providers": ["https://ic0.app"],
+      "type": "persistent"
     },
     "ic": {
       "providers": ["https://ic0.app"],
