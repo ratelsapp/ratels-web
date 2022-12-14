@@ -1,6 +1,12 @@
 import React from "react"
 import {Badge, Image} from "react-bootstrap";
 
+import m1 from '../assets/images/nft/m1.svg';
+import m2 from '../assets/images/nft/m2.svg';
+import m3 from '../assets/images/nft/m3.svg';
+import m4 from '../assets/images/nft/m4.svg';
+import m5 from '../assets/images/nft/m5.svg';
+
 export default function Nft(){
 
     const content = [
@@ -8,34 +14,19 @@ export default function Nft(){
             "key" : 1,
             "title" : "Entrepot",
             "hasBadge": true,
-            "images": [
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000"
-            ]
+            "images": [m1, m2, m3, m4, m5]
         },
         {
             "key" : 2,
             "title" : "Entrepot",
             "hasBadge": true,
-            "images": [
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000"
-            ]
+            "images": [m1, m2, m3, m4, m5]
         },
         {
             "key" : 3,
             "title" : "Entrepot",
             "hasBadge": true,
-            "images": [
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000",
-                "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000"
-            ]
+            "images": [m1, m2, m3, m4, m5]
         }
     ]
 

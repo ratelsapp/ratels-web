@@ -1,6 +1,10 @@
 import React from "react"
 import {Image} from "react-bootstrap"
-
+import m1 from '../assets/images/banner/m1.svg';
+import m2 from '../assets/images/banner/m2.svg';
+import m3 from '../assets/images/banner/m3.svg';
+import m4 from '../assets/images/banner/m4.svg';
+import m5 from '../assets/images/banner/m5.svg';
 
 export default function Ratel() {
 
@@ -9,19 +13,23 @@ export default function Ratel() {
     const images = [
         {
             "key": 1,
-            "src": "https://img.freepik.com/premium-vector/mutant-ape-yacht-club-nft-artwork-collection-set-unique-bored-monkey-character-nfts-variant_361671-259.jpg?w=2000"
+            "src": m2
         },
         {
             "key": 2,
-            "src": "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/in/wp-content/uploads/2022/03/monkey-g412399084_1280.jpg"
+            "src": m3
         },
         {
             "key": 3,
-            "src": "https://cdn.dribbble.com/users/383277/screenshots/18055765/media/e5fc935b60035305099554810357012a.png?compress=1&resize=400x300"
+            "src": m4
         },
         {
             "key": 4,
-            "src": "https://cdn.dribbble.com/users/383277/screenshots/18055765/media/e5fc935b60035305099554810357012a.png?compress=1&resize=400x300"
+            "src": m5
+        },
+        {
+            "key": 4,
+            "src": m1
         }
     ]
 
