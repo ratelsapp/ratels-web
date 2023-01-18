@@ -10,20 +10,55 @@ export function themePalette(theme) {
     },
     primary: {
       accountCardBg:
-        theme.customization.navType === "dark" ? theme.colors.accountCardBgDarkPrimaryLight : theme.colors.primaryLight,
-      light: theme.customization.navType === "dark" ? theme.colors.darkPrimaryLight : theme.colors.primaryLight,
-      main: theme.customization.navType === "dark" ? theme.colors.darkPrimaryMain : theme.colors.lightPrimaryMain,
-      dark: theme.customization.navType === "dark" ? theme.colors.darkPrimaryDark : theme.colors.primaryDark,
-      200: theme.customization.navType === "dark" ? theme.colors.darkPrimary200 : theme.colors.primary200,
-      800: theme.customization.navType === "dark" ? theme.colors.darkPrimary800 : theme.colors.primary800,
-      400: theme.customization.navType === "dark" ? theme.colors.darkPrimary400 : theme.colors.primary800,
+        theme.customization.navType === "dark"
+          ? theme.colors.accountCardBgDarkPrimaryLight
+          : theme.colors.primaryLight,
+      light:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkPrimaryLight
+          : theme.colors.primaryLight,
+      main:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkPrimaryMain
+          : theme.colors.lightPrimaryMain,
+      dark:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkPrimaryDark
+          : theme.colors.primaryDark,
+      200:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkPrimary200
+          : theme.colors.primary200,
+      800:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkPrimary800
+          : theme.colors.primary800,
+      400:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkPrimary400
+          : theme.colors.primary800,
     },
     secondary: {
-      light: theme.customization.navType === "dark" ? theme.colors.darkSecondaryLight : theme.colors.secondaryLight,
-      main: theme.customization.navType === "dark" ? theme.colors.darkSecondaryMain : theme.colors.secondaryMain,
-      dark: theme.customization.navType === "dark" ? theme.colors.darkSecondaryLight : theme.colors.secondaryDark,
-      200: theme.customization.navType === "dark" ? theme.colors.darkSecondary200 : theme.colors.secondary200,
-      800: theme.customization.navType === "dark" ? theme.colors.darkSecondary800 : theme.colors.secondary800,
+      light:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkSecondaryLight
+          : theme.colors.secondaryLight,
+      main:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkSecondaryMain
+          : theme.colors.secondaryMain,
+      dark:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkSecondaryLight
+          : theme.colors.secondaryDark,
+      200:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkSecondary200
+          : theme.colors.secondary200,
+      800:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkSecondary800
+          : theme.colors.secondary800,
     },
     error: {
       light: theme.colors.errorLight,
@@ -76,10 +111,22 @@ export function themePalette(theme) {
     background: {
       paper: theme.paper,
       default: theme.backgroundDefault,
-      level1: theme.customization.navType === "dark" ? theme.colors.darkLevel1 : theme.colors.primaryLight,
-      level2: theme.customization.navType === "dark" ? theme.colors.darkLevel2 : theme.colors.lightLevel2,
-      level3: theme.customization.navType === "dark" ? theme.colors.darkLevel3 : theme.colors.paper,
-      level4: theme.customization.navType === "dark" ? theme.colors.darkLevel4 : theme.colors.lightLevel4,
+      level1:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkLevel1
+          : theme.colors.primaryLight,
+      level2:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkLevel2
+          : theme.colors.lightLevel2,
+      level3:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkLevel3
+          : theme.colors.paper,
+      level4:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkLevel4
+          : theme.colors.lightLevel4,
     },
     border: {
       normal:
@@ -92,10 +139,16 @@ export function themePalette(theme) {
           : `1px solid ${theme.colors.lightGray200BorderColor}`,
     },
     avatar: {
-      gray200BgColor: theme.customization.navType === "dark" ? { bgcolor: "#384368" } : { bgcolor: "transparent" },
+      gray200BgColor:
+        theme.customization.navType === "dark"
+          ? { bgcolor: "#384368" }
+          : { bgcolor: "transparent" },
     },
     loading: {
-      background: theme.customization.navType === "dark" ? theme.colors.darkLevel3 : theme.colors.paper,
+      background:
+        theme.customization.navType === "dark"
+          ? theme.colors.darkLevel3
+          : theme.colors.paper,
     },
   };
 }

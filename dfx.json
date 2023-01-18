@@ -15,10 +15,6 @@
   },
   "dfx": "0.9.3",
   "networks": {
-    "test": {
-        "bind": "dtest.app",
-        "type": "ephemeral"
-    },
     "local": {
       "bind": "127.0.0.1:8000",
       "type": "ephemeral"

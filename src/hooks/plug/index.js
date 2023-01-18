@@ -1,7 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import { host } from "constants/server";
 import { Principal } from "@dfinity/principal";
-import { canisterIds as canisterIdMap } from "constants/canister";
 import { useWalletType } from "store/auth/hooks";
 import { WalletType } from "constants/wallet";
 import store from "../../store";
@@ -11,8 +10,7 @@ export async function initPluginConnect(whitelist) {
   const isConnected = await requestConnect(whitelist);
 
   if (isConnected) {
-    const canisterIds = Object.values(canisterIdMap ?? {});
-    await createPlugAgent(canisterIds);
+    await createPlugAgent([]);
     store.dispatch(updateLockStatus(false));
   }
 
@@ -20,10 +18,8 @@ export async function initPluginConnect(whitelist) {
 }
 
 export async function requestConnect(whitelist) {
-  const canisterIds = Object.values(canisterIdMap ?? {});
-
   const publicKey = await window.ic.plug.requestConnect({
-    whitelist: [...(whitelist ?? []), ...canisterIds],
+    whitelist: [...(whitelist ?? [])],
   });
 
   return Boolean(publicKey);
@@ -45,25 +41,6 @@ export async function createPlugAgent(whitelist) {
       host: host,
     });
   }
-}
-
-export function useInitialPlugAgent(whitelist) {
-  const walletType = useWalletType();
-  const [agentLoading, setAgentLoading] = useState(true);
-
-  useEffect(() => {
-    (async () => {
-      if (walletType && walletType === WalletType.PLUG && !window.ic?.plug?.agent) {
-        setAgentLoading(true);
-        await createPlugAgent(whitelist);
-        setAgentLoading(false);
-      } else if (walletType === WalletType.ICP_SWAP) {
-        setAgentLoading(false);
-      }
-    })();
-  }, [walletType, setAgentLoading]);
-
-  return agentLoading;
 }
 
 export async function getAccountPrincipal() {

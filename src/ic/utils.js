@@ -14,7 +14,10 @@ const bip39 = require("bip39");
 const pbkdf2 = require("pbkdf2");
 
 const getCyclesTopupAddress = (canisterId) => {
-  return principalToAccountIdentifier(CYCLES_MINTING_CANISTER_ID, getCyclesTopupSubAccount(canisterId));
+  return principalToAccountIdentifier(
+    CYCLES_MINTING_CANISTER_ID,
+    getCyclesTopupSubAccount(canisterId)
+  );
 };
 const getCyclesTopupSubAccount = (canisterId) => {
   var pb = Array.from(Principal.fromText(canisterId).toUint8Array());
@@ -31,7 +34,11 @@ const amountToBigInt = (amount, decimals) => {
 };
 const principalToAccountIdentifier = (p, s) => {
   const padding = Buffer("\x0Aaccount-id");
-  const array = new Uint8Array([...padding, ...Principal.fromText(p).toUint8Array(), ...getSubAccountArray(s)]);
+  const array = new Uint8Array([
+    ...padding,
+    ...Principal.fromText(p).toUint8Array(),
+    ...getSubAccountArray(s),
+  ]);
   const hash = sha224(array);
   const checksum = to32bits(getCrc32(hash));
   const array2 = new Uint8Array([...checksum, ...hash]);
@@ -66,7 +73,8 @@ const toHexString = (byteArray) => {
 };
 const fromHexString = (hex) => {
   if (hex.substr(0, 2) === "0x") hex = hex.substr(2);
-  for (var bytes = [], c = 0; c < hex.length; c += 2) bytes.push(parseInt(hex.substr(c, 2), 16));
+  for (var bytes = [], c = 0; c < hex.length; c += 2)
+    bytes.push(parseInt(hex.substr(c, 2), 16));
   return bytes;
 };
 const mnemonicToId = (mnemonic) => {

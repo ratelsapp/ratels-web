@@ -38,7 +38,8 @@ export function themeTypography(theme) {
     subtitle1: {
       fontSize: "0.875rem",
       fontWeight: 500,
-      color: theme.customization.navType === "dark" ? theme.heading : theme.textDark,
+      color:
+        theme.customization.navType === "dark" ? theme.heading : theme.textDark,
     },
     subtitle2: {
       fontSize: "0.75rem",

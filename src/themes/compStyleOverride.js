@@ -6,21 +6,28 @@ const MuiTheme = createTheme({});
 export function componentStyleOverrides(theme) {
   const isDark = isDarkTheme(theme);
 
-  const globalButtonBackground = isDark ? theme.defaultGradient : theme.colors.lightPrimaryMain;
+  const globalButtonBackground = isDark
+    ? theme.defaultGradient
+    : theme.colors.lightPrimaryMain;
 
-  const menuHoverBackground = isDark ? theme.menuSelectedBack : theme.colors.lightLevel2;
+  const menuHoverBackground = isDark
+    ? theme.menuSelectedBack
+    : theme.colors.lightLevel2;
 
   return {
     MuiButton: {
       styleOverrides: {
         root: {
           fontWeight: 500,
-          // textTransform: "capitalize",
           borderRadius: "8px",
           textTransform: "none",
           "&.MuiButton-outlinedPrimary": {
-            color: isDark ? theme.colors.secondaryMain : theme.colors.lightPrimaryMain,
-            borderColor: isDark ? theme.colors.secondaryMain : theme.colors.lightPrimaryMain,
+            color: isDark
+              ? theme.colors.secondaryMain
+              : theme.colors.lightPrimaryMain,
+            borderColor: isDark
+              ? theme.colors.secondaryMain
+              : theme.colors.lightPrimaryMain,
             "&:hover": {
               background: "rgba(86, 105, 220, 0.1)",
             },
@@ -41,7 +48,9 @@ export function componentStyleOverrides(theme) {
         },
         containedSecondary: {
           background: isDark ? theme.colors.darkLevel4 : "#EFEFFF",
-          color: isDark ? theme.colors.darkTextSecondary : theme.colors.primaryMain,
+          color: isDark
+            ? theme.colors.darkTextSecondary
+            : theme.colors.primaryMain,
         },
       },
     },
@@ -52,7 +61,9 @@ export function componentStyleOverrides(theme) {
       styleOverrides: {
         root: {
           backgroundImage: "none",
-          backgroundColor: isDark ? theme.colors.darkLevel1 : theme.colors.paper,
+          backgroundColor: isDark
+            ? theme.colors.darkLevel1
+            : theme.colors.paper,
         },
         rounded: {
           borderRadius: theme.customization.borderRadius + "px",
@@ -212,7 +223,9 @@ export function componentStyleOverrides(theme) {
           borderRadius: theme.customization.borderRadius + "px",
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor:
-              theme.customization.navType === "dark" ? theme.colors.textPrimary + 28 : theme.colors.lightGray200,
+              theme.customization.navType === "dark"
+                ? theme.colors.textPrimary + 28
+                : theme.colors.lightGray200,
           },
           "&:hover $notchedOutline": {
             borderColor: theme.colors.primaryLight,
@@ -249,7 +262,9 @@ export function componentStyleOverrides(theme) {
       styleOverrides: {
         root: {
           "&.Mui-disabled": {
-            color: isDark ? theme.colors.textPrimary + 50 : theme.colors.grey300,
+            color: isDark
+              ? theme.colors.textPrimary + 50
+              : theme.colors.grey300,
           },
         },
         mark: {
@@ -265,11 +280,15 @@ export function componentStyleOverrides(theme) {
       styleOverrides: {
         root: {
           "& .MuiAutocomplete-tag": {
-            background: isDark ? theme.colors.textPrimary + 20 : theme.colors.secondaryLight,
+            background: isDark
+              ? theme.colors.textPrimary + 20
+              : theme.colors.secondaryLight,
             borderRadius: 4,
             color: theme.textDark,
             ".MuiChip-deleteIcon": {
-              color: isDark ? theme.colors.textPrimary + 80 : theme.colors.secondary200,
+              color: isDark
+                ? theme.colors.textPrimary + 80
+                : theme.colors.secondary200,
             },
           },
         },
@@ -353,9 +372,13 @@ export function componentStyleOverrides(theme) {
     MuiInternalDateTimePickerTabs: {
       styleOverrides: {
         tabs: {
-          backgroundColor: isDark ? theme.colors.darkPaper : theme.colors.primaryLight,
+          backgroundColor: isDark
+            ? theme.colors.darkPaper
+            : theme.colors.primaryLight,
           "& .MuiTabs-flexContainer": {
-            borderColor: isDark ? theme.colors.textPrimary + 20 : theme.colors.primary200,
+            borderColor: isDark
+              ? theme.colors.textPrimary + 20
+              : theme.colors.primary200,
           },
           "& .MuiTab-root": {
             color: isDark ? theme.colors.textSecondary : theme.colors.grey900,
@@ -373,7 +396,9 @@ export function componentStyleOverrides(theme) {
       styleOverrides: {
         flexContainer: {
           borderBottom: "1px solid",
-          borderColor: isDark ? theme.colors.textPrimary + 20 : theme.colors.grey200,
+          borderColor: isDark
+            ? theme.colors.textPrimary + 20
+            : theme.colors.grey200,
         },
       },
     },
@@ -381,7 +406,9 @@ export function componentStyleOverrides(theme) {
       styleOverrides: {
         paper: {
           padding: "12px 0 12px 0",
-          backgroundColor: isDark ? theme.colors.darkLevel3 : theme.colors.primary200,
+          backgroundColor: isDark
+            ? theme.colors.darkLevel3
+            : theme.colors.primary200,
         },
       },
     },
@@ -400,7 +427,9 @@ export function componentStyleOverrides(theme) {
     MuiTableCell: {
       styleOverrides: {
         root: {
-          borderColor: isDark ? "rgba(189, 200, 240, 0.082)" : theme.colors.grey200,
+          borderColor: isDark
+            ? "rgba(189, 200, 240, 0.082)"
+            : theme.colors.grey200,
           "&.MuiTableCell-head": {
             fontSize: theme.fontSize.xs,
             color: theme.textTertiary,
@@ -462,7 +491,9 @@ export function componentStyleOverrides(theme) {
           "& .MuiStepIcon-root": {
             color: isDark ? theme.colors.darkLevel4 : "#BDBDBD",
             "&.Mui-active": {
-              color: isDark ? theme.colors.darkSecondaryMain : theme.colors.lightPrimaryMain,
+              color: isDark
+                ? theme.colors.darkSecondaryMain
+                : theme.colors.lightPrimaryMain,
             },
             "&.MuiStepIcon-completed": {
               color: isDark ? theme.colors.darkSecondaryMain : "#00C853",
@@ -503,10 +534,14 @@ export function componentStyleOverrides(theme) {
       styleOverrides: {
         root: {
           "& .lightGray200": {
-            ...(theme.customization.navType !== "dark" ? { backgroundColor: theme.colors.lightGray200 } : {}),
+            ...(theme.customization.navType !== "dark"
+              ? { backgroundColor: theme.colors.lightGray200 }
+              : {}),
           },
           "& .lightGray50": {
-            ...(theme.customization.navType !== "dark" ? { backgroundColor: theme.colors.lightGray50 } : {}),
+            ...(theme.customization.navType !== "dark"
+              ? { backgroundColor: theme.colors.lightGray50 }
+              : {}),
           },
         },
       },

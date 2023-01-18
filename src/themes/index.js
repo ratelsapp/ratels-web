@@ -5,7 +5,6 @@ import colors from "../assets/scss/_themes-vars.module.scss";
 import { componentStyleOverrides } from "./compStyleOverride";
 import { themePalette } from "./palette";
 import { themeTypography } from "./typography";
-import { customShadows } from "./shadows";
 
 const fontSize = {
   xs: "0.75rem",
@@ -16,10 +15,6 @@ const fontSize = {
 
 const Radius = 12;
 
-/**
- * Represent theme style and structure as per Material-UI
- * @param {JsonObject} customization customization parameter object
- */
 export function theme(customization) {
   let color = colors;
 
@@ -80,26 +75,6 @@ export function theme(customization) {
   return createTheme({
     direction: customization.rtlLayout ? "rtl" : "ltr",
     palette: themePalette(themeOption),
-    mixins: {
-      toolbar: {
-        minHeight: "48px",
-        padding: "16px",
-        "@media (min-width: 600px)": {
-          minHeight: "48px",
-        },
-      },
-      lightGray200Border: {
-        border: `1px solid ${color.lightGray200Border}`,
-      },
-      overflowEllipsis2: {
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-        display: "-webkit-box",
-        "-webkit-box-orient": "vertical",
-        "-webkit-line-clamp": 2,
-      },
-    },
-    customShadows: customShadows(customization.navType, themeOption),
     typography: themeTypography(themeOption),
     components: componentStyleOverrides(themeOption),
     themeOption,

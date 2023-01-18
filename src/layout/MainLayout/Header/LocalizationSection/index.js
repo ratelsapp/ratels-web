@@ -35,8 +35,14 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.commonAvatar,
     ...theme.typography.mediumAvatar,
     border: "1px solid",
-    borderColor: theme.palette.mode === "dark" ? theme.palette.dark.main : theme.palette.primary.light,
-    background: theme.palette.mode === "dark" ? theme.palette.dark.main : theme.palette.primary.light,
+    borderColor:
+      theme.palette.mode === "dark"
+        ? theme.palette.dark.main
+        : theme.palette.primary.light,
+    background:
+      theme.palette.mode === "dark"
+        ? theme.palette.dark.main
+        : theme.palette.primary.light,
     color: theme.palette.mode === "dark" ? theme.textDark : theme.lightDark,
     transition: "all .2s ease-in-out",
     '&[aria-controls="menu-list-grow"],&:hover': {
@@ -110,11 +116,17 @@ const LocalizationSection = () => {
             color="inherit"
           >
             {language !== "en" && (
-              <Typography variant="h5" sx={{ textTransform: "uppercase" }} color="inherit">
+              <Typography
+                variant="h5"
+                sx={{ textTransform: "uppercase" }}
+                color="inherit"
+              >
                 {language}
               </Typography>
             )}
-            {language === "en" && <TranslateTwoToneIcon sx={{ fontSize: "1.3rem" }} />}
+            {language === "en" && (
+              <TranslateTwoToneIcon sx={{ fontSize: "1.3rem" }} />
+            )}
           </Avatar>
         </ButtonBase>
       </Box>
@@ -142,12 +154,20 @@ const LocalizationSection = () => {
             <Paper elevation={16}>
               <ClickAwayListener onClickAway={handleClose}>
                 <List component="nav" className={classes.navContainer}>
-                  <ListItem button selected={language === "en"} onClick={(event) => handleListItemClick(event, "en")}>
+                  <ListItem
+                    button
+                    selected={language === "en"}
+                    onClick={(event) => handleListItemClick(event, "en")}
+                  >
                     <ListItemText
                       primary={
                         <Grid container>
                           <Typography color="textPrimary">English</Typography>
-                          <Typography variant="caption" color="textSecondary" sx={{ ml: "8px" }}>
+                          <Typography
+                            variant="caption"
+                            color="textSecondary"
+                            sx={{ ml: "8px" }}
+                          >
                             (UK)
                           </Typography>
                         </Grid>
@@ -165,31 +185,51 @@ const LocalizationSection = () => {
                       primary={
                         <Grid container>
                           <Typography color="textPrimary">français</Typography>
-                          <Typography variant="caption" color="textSecondary" sx={{ ml: "8px" }}>
+                          <Typography
+                            variant="caption"
+                            color="textSecondary"
+                            sx={{ ml: "8px" }}
+                          >
                             (French)
                           </Typography>
                         </Grid>
                       }
                     />
                   </ListItem>
-                  <ListItem button selected={language === "ro"} onClick={(event) => handleListItemClick(event, "ro")}>
+                  <ListItem
+                    button
+                    selected={language === "ro"}
+                    onClick={(event) => handleListItemClick(event, "ro")}
+                  >
                     <ListItemText
                       primary={
                         <Grid container>
                           <Typography color="textPrimary">Română</Typography>
-                          <Typography variant="caption" color="textSecondary" sx={{ ml: "8px" }}>
+                          <Typography
+                            variant="caption"
+                            color="textSecondary"
+                            sx={{ ml: "8px" }}
+                          >
                             (Romanian)
                           </Typography>
                         </Grid>
                       }
                     />
                   </ListItem>
-                  <ListItem button selected={language === "zh"} onClick={(event) => handleListItemClick(event, "zh")}>
+                  <ListItem
+                    button
+                    selected={language === "zh"}
+                    onClick={(event) => handleListItemClick(event, "zh")}
+                  >
                     <ListItemText
                       primary={
                         <Grid container>
                           <Typography color="textPrimary">中国人</Typography>
-                          <Typography variant="caption" color="textSecondary" sx={{ ml: "8px" }}>
+                          <Typography
+                            variant="caption"
+                            color="textSecondary"
+                            sx={{ ml: "8px" }}
+                          >
                             (Chinese)
                           </Typography>
                         </Grid>

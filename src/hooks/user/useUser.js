@@ -1,39 +1,31 @@
-import { CONNECTIDS } from '../../config'
-import { idlFactory } from '../../actor/user.did'
-import { CANISTER_NAMES } from "constants/canister";
+import { idlFactory } from "../../declarations/user.did.js";
 import { Actor } from "actor/Actor";
+import { USER_CID } from "../../constants/index";
+import { host } from "../../constants/server";
 
-const userActor = async (cid, identity) => {
-  const logintype = localStorage._loginType
+const userActor = async (identity) => {
+  const loginType = localStorage._loginType;
 
-  if (logintype === 'plug') {
+  if (loginType === "plug") {
     const NNSUiActor = await window.ic.plug.createActor({
-      canisterId: CONNECTIDS.user,
+      canisterId: USER_CID,
       interfaceFactory: idlFactory,
+      host,
     });
 
-    return NNSUiActor
-  }else {
+    return NNSUiActor;
+  } else {
     return await Actor.create({
-      canisterId: CONNECTIDS.user,
+      canisterId: USER_CID,
       identity,
-      canisterName: CANISTER_NAMES.user,
+      idlFactory,
+      host,
     });
   }
-}
+};
 
-export async function verify(cid, identity, type, user){
-  const result = await (await userActor(cid, identity)).verify(type, user);
-
-  if (result.ok) {
-    return result.ok;
-  } else {
-    return [];
-  }
-}
-
-export async function get(cid, identity){
-  const result = await (await userActor(cid, identity)).get();
+export async function verify(identity, type, user) {
+  const result = await (await userActor(identity)).verify(type, user);
 
   if (result.ok) {
     return result.ok;
@@ -42,8 +34,8 @@ export async function get(cid, identity){
   }
 }
 
-export async function searchTwitterAccount(cid, identity, username){
-  const result = await (await userActor(cid, identity)).searchTwitterAccount(username.trim());
+export async function get(identity) {
+  const result = await (await userActor(identity)).get();
 
   if (result.ok) {
     return result.ok;
@@ -52,8 +44,10 @@ export async function searchTwitterAccount(cid, identity, username){
   }
 }
 
-export async function searchMultiTwitterAccount(cid, identity, usernames = []){
-  const result = await (await userActor(cid, identity)).searchMultiTwitterAccount(usernames);
+export async function searchTwitterAccount(identity, username) {
+  const result = await (
+    await userActor(identity)
+  ).searchTwitterAccount(username.trim());
 
   if (result.ok) {
     return result.ok;
@@ -62,8 +56,10 @@ export async function searchMultiTwitterAccount(cid, identity, usernames = []){
   }
 }
 
-export async function searchIcpAccount(cid, identity, account){
-  const result = await (await userActor(cid, identity)).searchIcpAccount(account.trim());
+export async function searchMultiTwitterAccount(identity, usernames = []) {
+  const result = await (
+    await userActor(identity)
+  ).searchMultiTwitterAccount(usernames);
 
   if (result.ok) {
     return result.ok;
@@ -72,8 +68,10 @@ export async function searchIcpAccount(cid, identity, account){
   }
 }
 
-export async function searchDiscordAccount(cid, identity, account){
-  const result = await (await userActor(cid, identity)).searchDiscordAccount(account.trim());
+export async function searchIcpAccount(identity, account) {
+  const result = await (
+    await userActor(identity)
+  ).searchIcpAccount(account.trim());
 
   if (result.ok) {
     return result.ok;
@@ -82,8 +80,22 @@ export async function searchDiscordAccount(cid, identity, account){
   }
 }
 
-export async function searchGithubAccount(cid, identity, account){
-  const result = await (await userActor(cid, identity)).searchGithubAccount(account.trim());
+export async function searchDiscordAccount(cid, identity, account) {
+  const result = await (
+    await userActor(identity)
+  ).searchDiscordAccount(account.trim());
+
+  if (result.ok) {
+    return result.ok;
+  } else {
+    return [];
+  }
+}
+
+export async function searchGithubAccount(identity, account) {
+  const result = await (
+    await userActor(identity)
+  ).searchGithubAccount(account.trim());
   if (result.ok) {
     return result.ok;
   } else {

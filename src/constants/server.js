@@ -8,8 +8,7 @@ export const hostMap = {
   // ic: "https://api.ratels.app",
 };
 
-export const network = process.env.REACT_APP_IC_NETWORK;
+// export const network = process.env.REACT_APP_IC_NETWORK;
+export const network = "ic";
 
-export const host = {
-  host: hostMap[network],
-};
+export const host = hostMap[network];

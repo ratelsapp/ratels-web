@@ -1,12 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { StoicIdentity } from "ic-stoic-identity";
 import extjs from "ic/extjs.js";
 import { useDispatch } from "react-redux";
 import { LOGIN, AUTH_LOADING } from "store/actions";
 import { LOGOUT } from "../store/actions";
-import { CONNECT_IDS,CONNECTIDS } from "../config";
+import { CONNECT_IDS } from "../config";
 import { AuthClient } from "@dfinity/auth-client";
-import { idlFactory } from '../actor/user.did'
 
 const currentLocaAccount = Number(localStorage.currentLocaAccount) || 0;
 
@@ -27,9 +26,6 @@ const useAuth = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-
-    // console.log('watch auth', currentAccount, accounts)
-
     if (identity && accounts.length) {
       dispatch({
         type: LOGIN,
@@ -41,25 +37,20 @@ const useAuth = () => {
         // loading: loading
       });
     }
-
-
   }, [accounts, identity, currentAccount, loginType]);
 
-
-  useEffect(()=> {
+  useEffect(() => {
     dispatch({
       type: AUTH_LOADING,
-      loading: loading
+      loading: loading,
     });
-  }, [loading])
+  }, [loading]);
 
-
-  const login = useCallback(async(type, collections = []) => {
+  const login = useCallback(async (type, collections = []) => {
     // console.log('load login >>>>>>')
     setLoading(true);
     let id = null;
     if (type === "stoic") {
-
       try {
         id = await StoicIdentity.connect();
         if (id) {
@@ -79,62 +70,34 @@ const useAuth = () => {
       } catch (e) {
         setLoading(false);
       }
-
-
-
     }
     if (type === "plug") {
       try {
-        // const onConnectionUpdate = () => {
-        //   console.log(window.ic.plug.sessionManager.sessionData)
-        // }
-
-        // const publicKey = await window.ic.plug.requestConnect();
-        //
-        // console.log('publicKey', publicKey)
-
-        // const host = "https://mainnet.dfinity.network";
         const result = await window.ic.plug.requestConnect({
           whitelist: collections.concat(CONNECT_IDS),
-          // host,
         });
-        // console.log('result', result)
-
 
         setLoading(false);
         if (result) {
-
           if (!window.ic.plug.agent) {
             await window.ic.plug.createAgent({
-              whitelist: collections.concat(CONNECT_IDS)
+              whitelist: collections.concat(CONNECT_IDS),
             });
           }
-
-          // const NNSUiActor = await window.ic.plug.createActor({
-          //   canisterId: CONNECTIDS.user,
-          //   interfaceFactory: idlFactory,
-          // });
-
-          // console.log('NNSUiActor', await NNSUiActor.get())
-
-
 
           id = await window.ic.plug.agent._identity;
           setIdentity(id);
 
-          // console.log('id.getPrincipal')
-
-          const address = extjs.toAddress(id.getPrincipal().toText(), 0)
+          const address = extjs.toAddress(id.getPrincipal().toText(), 0);
 
           if (address) {
             setAccounts([
               {
                 name: "PlugWallet",
-                address: address
-              }
+                address: address,
+              },
             ]);
           }
-
 
           setCurrentAccount(0);
           setCurrentLocaAccount(0);
@@ -156,10 +119,9 @@ const useAuth = () => {
       await new Promise((resolve, reject) => {
         client?.login({
           onSuccess: () => resolve(true),
-          onError: reject
+          onError: reject,
         });
       });
-
 
       const identity = client?.getIdentity();
 
@@ -174,11 +136,10 @@ const useAuth = () => {
       setAccounts([
         {
           name: "InternetIdentity",
-          address: extjs.toAddress(principal, 0)
-        }
+          address: extjs.toAddress(principal, 0),
+        },
       ]);
     }
-
   }, []);
 
   const logout = useCallback(async () => {
@@ -189,12 +150,11 @@ const useAuth = () => {
     setCurrentAccount("");
     dispatch({ type: LOGOUT });
 
-    const client = await AuthClient.create()
-    client?.logout()
-
+    const client = await AuthClient.create();
+    client?.logout();
   }, []);
 
-  const load = (collections = [])=> {
+  const load = (collections = []) => {
     // console.log('load >>>>>>')
     const t = localStorage.getItem("_loginType");
     if (t) {
@@ -202,7 +162,7 @@ const useAuth = () => {
       switch (t) {
         case "stoic":
           StoicIdentity.load()
-            .then(async(identity) => {
+            .then(async (identity) => {
               if (identity !== false) {
                 setIdentity(identity);
                 setLoginType(t);
@@ -221,12 +181,12 @@ const useAuth = () => {
             });
           break;
         case "plug":
-          (async() => {
+          (async () => {
             const connected = await window.ic.plug.isConnected();
             if (connected) {
               if (!window.ic.plug.agent) {
                 await window.ic.plug.createAgent({
-                  whitelist: collections.concat(CONNECT_IDS)
+                  whitelist: collections.concat(CONNECT_IDS),
                 });
               }
               var id = await window.ic.plug.agent._identity;
@@ -234,59 +194,44 @@ const useAuth = () => {
               setLoginType(t);
               setLoading(false);
 
-              // console.log('id.getPrincipal')
-
-
-              const address = extjs.toAddress(id.getPrincipal().toText(), 0)
-
-              // console.log('load address >>>>>>', address, id)
-
+              const address = extjs.toAddress(id.getPrincipal().toText(), 0);
 
               if (address) {
                 setAccounts([
                   {
                     name: "Plug Wallet",
-                    address: address
-                  }
+                    address: address,
+                  },
                 ]);
               }
-
-
-
-
             }
           })();
           break;
-        case 'internet':
-          (async() => {
-
-
-
-            const client = await AuthClient.create()
-            const connected = await client.isAuthenticated()
+        case "internet":
+          (async () => {
+            const client = await AuthClient.create();
+            const connected = await client.isAuthenticated();
 
             if (connected) {
-              const identity = client.getIdentity()
-              const principal = identity?.getPrincipal().toString()
+              const identity = client.getIdentity();
+              const principal = identity?.getPrincipal().toString();
 
-              setIdentity(identity)
-              setLoginType(t)
-              setLoading(false)
+              setIdentity(identity);
+              setLoginType(t);
+              setLoading(false);
               setAccounts([
                 {
-                  name: 'InternetIdentity',
+                  name: "InternetIdentity",
                   address: extjs.toAddress(principal, 0),
                 },
-              ])
+              ]);
             }
-
-
-          })()
+          })();
         default:
           break;
       }
     }
-  }
+  };
 
   return { login, logout, loading, load };
 };

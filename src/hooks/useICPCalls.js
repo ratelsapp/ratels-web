@@ -60,9 +60,13 @@ export function useICPTransactionsCall(address) {
 export function useICPBlocksCall() {
   return useCallsData(
     useCallback(async () => {
-      const { data: rateBlock } = await axios.get(INTERNET_COMPUTER_BASE + "/metrics/block-rate");
+      const { data: rateBlock } = await axios.get(
+        INTERNET_COMPUTER_BASE + "/metrics/block-rate"
+      );
 
-      const { data: pBlock } = await axios.get(INTERNET_COMPUTER_BASE + "/metrics/pblock");
+      const { data: pBlock } = await axios.get(
+        INTERNET_COMPUTER_BASE + "/metrics/pblock"
+      );
 
       return {
         blocks: pBlock?.block[0][1],
@@ -97,7 +101,9 @@ export async function sendICP(to, amount, identity, memo) {
   } catch (e) {
     console.error(e);
     const _err = e.toString();
-    const errorMessage = _err.includes("You have tried to spend more than the balance of your account")
+    const errorMessage = _err.includes(
+      "You have tried to spend more than the balance of your account"
+    )
       ? "You have tried to spend more than the balance of your account"
       : "Transfer Failed";
 
