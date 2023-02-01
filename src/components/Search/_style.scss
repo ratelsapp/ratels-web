@@ -1,0 +1,165 @@
+@import "../../styles/mixin";
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .searchtab {
+    border: 1px solid #343836;
+    height: 48px;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    user-select: none;
+    max-width: 494px;
+    margin-bottom: 24px;
+
+    &_item {
+      width: 100%;
+      font-size: 16px;
+      color: #9B9B9B;
+      width: 494px;
+      text-align: center;
+      cursor: pointer;
+      height: 100%;
+      line-height: 48px;
+      background: #0F1814;
+
+      &:not(:last-child) {
+        border-right: 1px solid #343836;
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+        background-color: rgba(15,24,20,0.5);
+      }
+
+      &.active {
+        background: #1BB16A;
+        color: #fff;
+      }
+    }
+  }
+  @include  mobile {
+    .searchtab {
+      height: 44px;
+      &_item {
+        max-width: 80px;
+        font-size: 12px;
+        line-height: 44px;
+      }
+    }
+  }
+}
+
+.search_bottom {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .search_platformWrap {
+    margin-right: 16px;
+  }
+
+  .search_platform {
+    width: 130px;
+    height: 48px;
+    background: #2C302E;
+    border: 1px solid #343836;
+    border-radius: 10px;
+    text-transform: initial;
+    color: #ffffff;
+  }
+
+  .search_inputWrap {
+    flex: 1;
+    position: relative;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background: #2C302E;
+    border-radius: 10px;
+
+    > input {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      font-size: 16px;
+      color: #fff;
+      padding-left: 24px;
+      border: none;
+      border: 1px solid #343836;
+      outline: none;
+      padding-right: 3px;
+      border-radius: 10px;
+      transition: all 0.25s ease-in-out;
+
+      &:focus {
+        box-shadow: 0 0 10px rgba(27, 177, 106, 0.6);
+      }
+    }
+
+    > button {
+      position: absolute;
+      right: 3px;
+      width: 88px;
+      height: 42px;
+      background: #1BB16A;
+      border-radius: 8px;
+      color: #fff;
+      text-transform: initial;
+      &:disabled {
+        background-color: grey;
+      }
+    }
+  }
+  @include mobile {
+    display: initial;
+    .search_platformWrap {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+    .search_platform {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+}
+
+.MuiPaper-root {
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+
+.seletItem {
+  height: 48px;
+  font-size: 16px;
+  color: #FFFFFF;
+  &.Mui-disabled {
+    cursor: no-drop;
+  }
+
+  &:hover {
+    background: rgba(37, 46, 42, 0.8);
+  }
+
+  &.Mui-selected {
+    background: #252E2A;
+
+    &:hover {
+      background: rgba(37, 46, 42, 0.8);
+    }
+  }
+}
+
+.MuiList-root {
+  min-width: 130px;
+  background: #111915;
+  //border: 1px solid #333333;
+  overflow: hidden;
+  padding: 0;
+}
